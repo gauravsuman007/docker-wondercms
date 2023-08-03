@@ -22,8 +22,6 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
 RUN docker-php-ext-configure zip && \
     docker-php-ext-install -j$(nproc) zip
 
-COPY . /var/www/html/
-
 RUN chown -R www-data:www-data /var/www/html
 
 EXPOSE 80
